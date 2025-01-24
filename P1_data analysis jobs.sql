@@ -57,7 +57,13 @@
 -- from data_analyst_jobs
 -- where review_count > 5000
 -- group by company;
--- 41 distinct companies with more than 5000 reviews
+
+-- select company, avg(star_rating) as avg_rating
+-- from data_analyst_jobs
+-- where company is not null
+-- group by company
+-- having sum(review_count) > 5000
+-- 40 or 70 distinct companies with more than 5000 reviews
 
 -- 10. Add the code to order the query in #9 from highest to lowest average star rating. Which company with more than 5000 reviews across all locations in the dataset has the highest star rating? What is that rating?
 -- select company, avg(star_rating) as avg_rating
@@ -65,7 +71,15 @@
 -- where review_count > 5000
 -- group by company
 -- order by avg_rating desc;
---General Motors seems to have the highest avg_rating at 4.2, though that goes for many entires
+
+-- select company, avg(star_rating) as avg_rating
+-- from data_analyst_jobs
+-- where company is not null
+-- group by company
+-- having sum(review_count) > 5000
+-- order by avg_rating desc;
+--General Motors seems to have the highest avg_rating at 4.2, though that goes for many entires for the first attempt.
+-- Google has the highest at 4.3 for the second attempt.
 
 -- 11. Find all the job titles that contain the word ‘Analyst’. How many different job titles are there?
 -- select count(*) as analyst_titles
